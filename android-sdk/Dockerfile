@@ -1,8 +1,7 @@
 # FROM thyrlian/android-sdk-vnc -- opcao suporta VNC
 # https://github.com/thyrlian/AndroidSDK
-# FROM thyrlian/android-sdk - imagem funcionando ok
 
-FROM alexandreoda/adb-fastboot
+FROM thyrlian/android-sdk
 
 RUN echo yes | sdkmanager "platform-tools" "platforms;android-24" "emulator"
 RUN echo yes | sdkmanager "system-images;android-24;default;armeabi-v7a"

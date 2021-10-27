@@ -31,8 +31,8 @@ RUN sudo n 12
 ################
 
 # INSTALL APPIUM
-#RUN npm i -g appium --unsafe-perm=true --allow-root
-#RUN npm i -g appium-doctor --unsafe-perm=true --allow-root
+RUN npm i -g appium --unsafe-perm=true --allow-root
+RUN npm i -g appium-doctor --unsafe-perm=true --allow-root
 
 #######################
 # OPENCV CONFIGURATION
@@ -42,7 +42,9 @@ RUN sudo n 12
 #RUN npm i -g opencv4nodejs --unsafe-perm=true --allow-root
 
 # FIX NODE_MODULES PATH
-#ENV NODE_PATH=/usr/local/lib/node_modules/
+ENV NODE_PATH=/usr/local/lib/node_modules/
+
+RUN appium &
 
 #############################
 # PIP INSTALL PYTHON MODULES
