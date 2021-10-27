@@ -1,0 +1,28 @@
+version: '2'
+services:
+  android_sdk:
+    build:
+      context: ./android-sdk
+      dockerfile: Dockerfile
+    restart: "no"
+    privileged: true
+    ports:
+      - "5901:5901"
+      - "2222:22"
+      - "5037:5037"
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb"
+  #appium:
+  #  build:
+  #    context: ./appium
+  #    dockerfile: Dockerfile
+  #  ports:
+  #    - 4723:4723
+  #  depends_on: 
+  #    - android_sdk
+
+###############################################
+# outras fontes com sdk pronto
+#https://github.com/mindrunner/docker-android-sdk
+#https://hub.docker.com/r/androidsdk/android-30
+###############################################
