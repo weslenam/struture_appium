@@ -1,2 +1,0 @@
-avdmanager create avd -n Pixel3Arm -k "system-images;android-29;default;armeabi-v7a" --device 18 &
-emulator -avd Pixel3Arm -noaudio -no-boot-anim -gpu off
