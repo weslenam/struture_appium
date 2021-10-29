@@ -16,7 +16,7 @@ services:
     volumes:
       - .android:/root/.android    
       - /dev/bus/usb:/dev/bus/usb
-      - ./example/sample_apk:/root/tmp #pasta da APK a ser instada
+      - ./apk_to_install:/root/tmp #pasta da APK a ser instada
     environment:
       - CONNECT_TO_GRID=true
       - SELENIUM_HOST=selenium_hub  

@@ -1,2 +1,4 @@
-/android
-/.video
+.android/
+.video/
+example/
+apk_to_install/sample_apk_debug.apk
