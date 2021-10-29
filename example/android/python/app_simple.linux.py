@@ -8,13 +8,14 @@ class SimpleAndroidUITests(unittest.TestCase):
     def setUp(self):
         desired_caps = {
             'platformName': 'Android',
-            'deviceName': 'Android Emulator',
+            'deviceName': 'Android API 25',
             'automationName': 'UIAutomator2',
             'app': '/root/tmp/sample_apk_debug.apk',
-            'browserName': 'android',
-            'avd': 'nexus_5_7.1.1'
+            'browserName': 'android'
         }
-        self.driver = webdriver.Remote('http://127.0.0.1:4444/wd/hub', desired_caps)
+
+        # dispositivo emulado
+        self.driver = webdriver.Remote('http://127.0.0.1:4444/wd/hub', desired_caps)        
 
     def tearDown(self):
         self.driver.quit()

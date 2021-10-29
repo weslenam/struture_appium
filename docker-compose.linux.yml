@@ -14,9 +14,8 @@ services:
     ports:
       - "4723:4723"
     volumes:
-      - /dev/bus/usb:/dev/bus/usb
-      - ~/.android:/root/.android
-      - $PWD/example/sample_apk:/root/tmp #pasta da APK a ser instada
+      - .android:/root/.android        
+      - ./example/sample_apk:/root/tmp #pasta da APK a ser instada
     environment:
       - CONNECT_TO_GRID=true
       - SELENIUM_HOST=selenium_hub  
@@ -26,7 +25,6 @@ services:
       context: ./repo_docker
       dockerfile: android.Dockerfile  
     privileged: true
-    # Increase scale number if needed
     scale: 1
     depends_on:
       - selenium_hub
@@ -34,18 +32,11 @@ services:
     ports:
       - "6080:6080"
     volumes:
-      - ./example/android/python:/python #pasta da APK a ser instada
       - ./example/sample_apk:/root/tmp #pasta da APK a ser instada
-      - ./video:/tmp/video
+      - ./.video:/tmp/video
     environment:
       - DEVICE=Nexus 5
       - CONNECT_TO_GRID=true
       - APPIUM=true
       - SELENIUM_HOST=selenium_hub
       - AUTO_RECORD=true      
-
-# analisar este repositorio
-# https://github.com/budtmo/docker-android
-
-# ver video
-# https://youtu.be/jE4oSetvzfQ

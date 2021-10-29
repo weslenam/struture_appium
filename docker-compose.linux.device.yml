@@ -1,0 +1,22 @@
+version: "2.2"
+services:
+  selenium_hub:
+    image: selenium/hub:3.14.0-curium
+    ports:
+      - "4444:4444"   
+  real_device:
+    build:
+      context: ./repo_docker
+      dockerfile: appium.Dockerfile    
+    depends_on:
+      - selenium_hub
+    privileged: true
+    ports:
+      - "4723:4723"
+    volumes:
+      - .android:/root/.android    
+      - /dev/bus/usb:/dev/bus/usb
+      - ./example/sample_apk:/root/tmp #pasta da APK a ser instada
+    environment:
+      - CONNECT_TO_GRID=true
+      - SELENIUM_HOST=selenium_hub  
