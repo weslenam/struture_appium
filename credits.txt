@@ -1,6 +1,9 @@
 
-# analisar este repositorio
-# https://github.com/budtmo/docker-android
+#analisar este repositorio
+#https://github.com/budtmo/docker-android
 
-# ver video
-# https://youtu.be/jE4oSetvzfQ
+#ver video
+#https://youtu.be/jE4oSetvzfQ
+
+#video com o funcionamento
+#https://www.youtube.com/watch?v=R1vm0RF66C8&ab_channel=EduardoMendes

@@ -32,8 +32,8 @@ services:
     ports:
       - "6080:6080"
     volumes:
-      - ./example/sample_apk:/root/tmp #pasta da APK a ser instada
-      - ./.video:/tmp/video
+      - ./apk_to_install:/root/tmp #pasta da APK a ser instada
+      - .video:/tmp/video
     environment:
       - DEVICE=Nexus 5
       - CONNECT_TO_GRID=true
